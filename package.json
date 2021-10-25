@@ -1,0 +1,49 @@
+{
+  "name": "ckb-experiment-js",
+  "version": "0.0.0",
+  "description": "An experimental lumos",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "test": "jest -c jest.config.js",
+    "clean": "rimraf lib",
+    "lint": "eslint 'src/**/*.ts'",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.1.0",
+    "@typescript-eslint/parser": "^5.1.0",
+    "eslint": "^8.0.1",
+    "husky": "^7.0.0",
+    "jest": "^27.3.1",
+    "prettier": "^2.4.1",
+    "pretty-quick": "^3.1.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.0.7",
+    "ts-node": "^10.3.0",
+    "typescript": "^4.4.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged --partern \"src/**/*.ts\" && npm run lint"
+    }
+  },
+  "dependencies": {
+    "@ckb-lumos/base": "^0.18.0-rc1",
+    "@ckb-lumos/config-manager": "^0.18.0-rc1",
+    "@ckb-lumos/hd": "^0.18.0-rc1",
+    "@ckb-lumos/helpers": "^0.18.0-rc1",
+    "@ckb-lumos/rpc": "^0.18.0-rc1",
+    "@open-rpc/client-js": "^1.7.1",
+    "@types/lodash": "^4.14.176",
+    "ckb-js-toolkit": "^0.10.2",
+    "immer": "^9.0.6",
+    "lodash": "^4.17.21",
+    "rxjs": "^7.4.0"
+  }
+}
